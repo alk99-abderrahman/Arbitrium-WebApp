@@ -8,6 +8,16 @@ cd $SCRIPTPATH
 value="{API_FQDN}"
 
 
+for arg in "$@"
+do
+    if [ "$arg" == "--help" ] || [ "$arg" == "-h" ]
+    then
+        echo "Usage: ./setAPI_FQDN.sh DOMAIN_OF_API_HOST_OR_IP"
+        exit 0
+    fi
+done
+
+
 
 if [ -e .API_FQDN.conf ]
 then
